@@ -30,7 +30,12 @@
     <div style="background-color: gray; padding: 10px; margin: 10px;">
       <h3>{{$item['title']}}</h3>
       {{$item['body']}}
-      <p><a href="/edit-post/{{$item->id}}">Edit</a></p>
+      <p><a href="/posts/{{$item->id}}/edit">Edit</a></p>
+      <form action="/posts/{{$item->id}}/delete" method="POST">
+        @csrf
+        @method('DELETE')
+        <button>Delete</button>
+      </form>
     </div>
     @endforeach
   </div>

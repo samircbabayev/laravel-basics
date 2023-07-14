@@ -30,5 +30,8 @@ Route::post('/register', [UserController::class, 'register']);
 Route::post('/logout', [UserController::class, 'logout']);
 Route::post('/login', [UserController::class, 'login']);
 
-Route::post('posts/add', [PostController::class, 'add']);
+Route::post('/posts/add', [PostController::class, 'add']);
+Route::get('/posts/{post}/edit', [PostController::class, 'editView']);
+Route::put('/posts/{post}/edit-action',[PostController::class, 'editAction']);
+Route::delete('/posts/{post}/delete',[PostController::class, 'delete']);
 // Route::get('posts')
