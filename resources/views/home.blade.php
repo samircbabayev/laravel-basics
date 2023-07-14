@@ -24,6 +24,17 @@
     </form>
   </div>
 
+  <div style="border: 3px solid black;">
+    <h2>All posts</h2>
+    @foreach($posts as $key => $item)
+    <div style="background-color: gray; padding: 10px; margin: 10px;">
+      <h3>{{$item['title']}}</h3>
+      {{$item['body']}}
+      <p><a href="/edit-post/{{$item->id}}">Edit</a></p>
+    </div>
+    @endforeach
+  </div>
+
   @else
   <div style="border: 3px solid black;">
     <h2>Register</h2>
